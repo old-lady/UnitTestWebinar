@@ -13,6 +13,7 @@ namespace UnitTestWebinar
 {
     public static class Calculator
     {
+        // Øvelse 01
         public static int Addition (int number, int number2)
         {
             return number + number2;

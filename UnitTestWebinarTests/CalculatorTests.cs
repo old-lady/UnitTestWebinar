@@ -12,6 +12,8 @@ namespace UnitTestWebinar.Tests
     [TestClass()]
     public class CalculatorTests
     {
+
+        // Øvelse 01
         [TestMethod()]
         public void AdditionTest()
 
@@ -34,7 +36,7 @@ namespace UnitTestWebinar.Tests
             Assert.AreEqual(0, k);
         }
 
-        // øvelse 01
+        // øvelse 02
         [TestMethod()]
         public void AverageTest()
         {
@@ -55,6 +57,8 @@ namespace UnitTestWebinar.Tests
             return result;
         }
 
+        // Øvelse 03
+
         [TestMethod()]
         public void DivideTest()
         {
@@ -65,6 +69,8 @@ namespace UnitTestWebinar.Tests
             Assert.AreEqual(2, test);
         }
 
+        // Øvelse 04
+
         [TestMethod()]
         public void IsPrimeTest()
         {
@@ -72,6 +78,9 @@ namespace UnitTestWebinar.Tests
             bool isprime = Calculator.IsPrime(prime);
             Assert.AreEqual(true, isprime);
         }
+
+        // Øvelse 04 b
+
         [TestMethod()]
         public void IsNotPrimeTest()
         {
@@ -81,6 +90,9 @@ namespace UnitTestWebinar.Tests
 
         }
 
+        // Øvelse 05
+
+
         [TestMethod()]
         public void FactorialTest()
         {
@@ -89,6 +101,9 @@ namespace UnitTestWebinar.Tests
 
             Assert.AreEqual(realResult, result);
         }
+
+        // Øvelse 06
+
 
         [TestMethod()]
         public void IsLeapYearTest()
@@ -102,6 +117,8 @@ namespace UnitTestWebinar.Tests
             }
         }
 
+        // Øvelse 07
+
         [TestMethod()]
         public void IsValidHumanTemperatureTest()
         {
@@ -113,6 +130,8 @@ namespace UnitTestWebinar.Tests
 
             }
         }
+
+        // Øvelse 07 b
 
         [TestMethod()]
         public void IsNotValidHumanTemperatureTest1()
@@ -126,6 +145,8 @@ namespace UnitTestWebinar.Tests
             }
         }
 
+        // Øvelse 08
+
         [TestMethod()]
         public void GetFilenameFromPathTest()
         {
@@ -135,12 +156,17 @@ namespace UnitTestWebinar.Tests
             Assert.AreEqual(fileName, Calculator.GetFilenameFromPath(path));
         }
 
+        // Øvelse 09
+
+
         [TestMethod()]
         public void IsValidEmailTest()
         {
             string ValidEmail = @"JuliaMySommer@gmail.com";
             Assert.AreEqual(true, Calculator.IsValidEmail(ValidEmail));
         }
+
+        // Øvelse 10
 
         [TestMethod()]
         public void TruncateByWordsWithEllipsisTest()
@@ -152,6 +178,8 @@ namespace UnitTestWebinar.Tests
             Assert.AreEqual(validResult, Calculator.TruncateByWordsWithEllipsis(stringToTest, testLength));
         }
 
+        // Øvelse 11
+
         [TestMethod()]
         public void RightTest()
         {
@@ -161,6 +189,8 @@ namespace UnitTestWebinar.Tests
 
             Assert.AreEqual(validResult, Calculator.Right(stringToTest, testLength));
         }
+
+        // Øvelse 12
 
         [TestMethod()]
         public void SerializeToXmlStringTest()
@@ -172,6 +202,8 @@ namespace UnitTestWebinar.Tests
 
             Assert.AreEqual(validResult, Calculator.SerializeToXmlString(testingString));
         }
+
+        // Øvelse 13
 
         [TestMethod()]
         public void WriteToFileTest()
