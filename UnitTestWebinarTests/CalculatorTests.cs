@@ -184,5 +184,30 @@ namespace UnitTestWebinar.Tests
             Calculator.WriteToFile(testingString, path);
             Assert.AreEqual(testingString, whatIsWritten);
         }
+
+        // Øvelse 16
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void ThrowIfLessThanTest()
+        {
+            int number = 0;
+            int limit = 10;
+
+            Calculator.ThrowIfLessThan(number, limit, "Too small");
+        }
+
+        // Øvelse 17
+
+        [TestMethod()]
+        public void GetTimeZoneOffsetTest()
+        {
+
+            string timeZone = "Central Europe Standard Time";
+            DateTime dateTime = DateTime.Now;
+            TimeSpan timeSpan = new TimeSpan(1, 0, 0);
+
+            Assert.AreEqual(timeSpan, Calculator.GetTimeZoneOffset(timeZone, dateTime));
+        }
+
     }
 }

@@ -19,6 +19,11 @@ namespace UnitTestWebinar
         public void Accelerate()
         {
             this.Speed += 20;
+
+            if (this.Speed > 100)
+            {
+                throw new Exception("Car is broken.");
+            }
         }
     }
 }

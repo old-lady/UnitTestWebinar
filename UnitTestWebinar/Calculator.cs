@@ -253,10 +253,41 @@ namespace UnitTestWebinar
             File.WriteAllText(file, text);
         }
 
-        // Øvelse 14
+        // Øvelse 14 + 15 --> se Car class
 
+        // Øvelse 16
+
+        /// <summary>
+        /// Checks the specified value and if it less than specified limit throws the
+        /// ArgumentOutOfRangeException exception with the specified message.
+        /// </summary>
+        /// <param name="value">A value to check.</param>
+        /// <param name="limit">A low limit of valid values.</param>
+        /// <param name="paramName">The name of the parameter that causes this exception.</param>
+        public static void ThrowIfLessThan(int value, int limit, string paramName)
+        {
+            bool isValueLessThan = value < limit;
+            if (isValueLessThan)
+            {
+                throw new ArgumentOutOfRangeException(paramName);
+            }
+        }
+
+        // Øvelse 17
+
+        /// <summary>
+        /// Gets the time zone offset.
+        /// </summary>
+        /// <param name="zoneName">Name of the zone.</param>
+        /// <param name="date">The date.</param>
+        /// <returns>TimeSpan from UTC.</returns>
+        public static TimeSpan GetTimeZoneOffset(string zoneName, DateTime date)
+        {
+            TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById(zoneName);
+            return tzi.GetUtcOffset(date);
+        }
 
     }
 
-    
+
 }

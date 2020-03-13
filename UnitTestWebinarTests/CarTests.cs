@@ -19,5 +19,17 @@ namespace UnitTestWebinar.Tests
             car.Accelerate();
             Assert.AreEqual(20, car.Speed);
         }
+
+        // Øvelse 15
+        [TestMethod()]
+        [ExpectedException(typeof(Exception))]
+        public void AccelerateTestCarFail()
+        {
+            Car car = new Car();
+            for (int i = 0; i < 20; i++)
+            {
+                car.Accelerate();
+            }
+        }
     }
 }
