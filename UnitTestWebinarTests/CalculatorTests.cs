@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Net.Http;
 
 namespace UnitTestWebinar.Tests
 {
@@ -65,7 +66,7 @@ namespace UnitTestWebinar.Tests
             int i = 10;
             int j = 5;
 
-            int test = Calculator.Divide(10, 5);
+            int test = Calculator.Divide(i, j);
             Assert.AreEqual(2, test);
         }
 
@@ -246,14 +247,31 @@ namespace UnitTestWebinar.Tests
         [TestMethod()]
         public void GetCookieValueTest()
         {
-            Assert.Fail();
+            // dummy test
+            HttpRequestMessage httpRequestMessage = new HttpRequestMessage();
+            string cookieName = "Cookie";
+            string cookieValue = "Name=Julia";
+            httpRequestMessage.Headers.Add(cookieName, cookieValue);
+
+            string result = Calculator.GetCookieValue(httpRequestMessage, "Name");
+
+
+            Assert.AreEqual("Julia", result);
         }
 
         // Øvelse 19 (Mangler)
         [TestMethod()]
         public void GetHeaderValueTest()
         {
-            Assert.Fail();
+            // dummy test
+            HttpRequestMessage httpRequestMessage = new HttpRequestMessage();
+            string headerKey = "MyTestHeader";
+            string keyValue = "The Cake Is A Lie";
+            httpRequestMessage.Headers.Add(headerKey, keyValue);
+
+            string result = Calculator.GetHeaderValue(httpRequestMessage, headerKey);
+
+            Assert.AreEqual(keyValue, result);
         }
 
         // Øvelse 20
