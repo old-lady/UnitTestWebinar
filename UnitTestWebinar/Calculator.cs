@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -285,6 +287,58 @@ namespace UnitTestWebinar
         {
             TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById(zoneName);
             return tzi.GetUtcOffset(date);
+        }
+
+        // Øvelse 18 (Mangler test)
+
+        /// <summary>
+        /// Retrieves an individual cookie from the cookies collection.
+        /// </summary>
+        /// <param name="request">The request to check for cookie.</param>
+        /// <param name="cookieName">Name of the cookie.</param>
+        /// <returns>Value of the cookie as string if cookie exists, otherwise <c>null</c>.</returns>
+        public static string GetCookieValue(this HttpRequestMessage request, string cookieName)
+        {
+            CookieHeaderValue cookie = request.Headers.GetCookies(cookieName).FirstOrDefault();
+            return cookie != null ? cookie[cookieName].Value : null;
+        }
+
+        // Øvelse 19 (Mangler test)
+
+        /// <summary>
+        /// Returns an individual HTTP Header value.
+        /// </summary>
+        /// <param name="request">The request to check for header.</param>
+        /// <param name="headerName">Name of the header to get value for.</param>
+        /// <returns>Value of the header as string if header exists, otherwise <c>null</c>.</returns>
+        public static string GetHeaderValue(this HttpRequestMessage request, string headerName)
+        {
+            IEnumerable<string> keys;
+            if (!request.Headers.TryGetValues(headerName, out keys))
+            {
+                return null;
+            }
+
+            return keys.First();
+        }
+
+        // Øvelse 20
+
+        /// <summary>
+        /// Parses the integer or null.
+        /// </summary>
+        /// <param name="candidate">The candidate to parse.</param>
+        /// <returns>Integer if parsed, otherwise null.</returns>
+        public static int? ParseIntegerOrNull(string candidate)
+        {
+            int i;
+
+            if (int.TryParse(candidate, out i))
+            {
+                return i;
+            }
+
+            return null;
         }
 
     }

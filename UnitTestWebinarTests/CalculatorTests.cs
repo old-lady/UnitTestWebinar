@@ -209,5 +209,30 @@ namespace UnitTestWebinar.Tests
             Assert.AreEqual(timeSpan, Calculator.GetTimeZoneOffset(timeZone, dateTime));
         }
 
+        // Øvelse 18 (Mangler)
+
+        [TestMethod()]
+        public void GetCookieValueTest()
+        {
+            Assert.Fail();
+        }
+
+        // Øvelse 19 (Mangler)
+        [TestMethod()]
+        public void GetHeaderValueTest()
+        {
+            Assert.Fail();
+        }
+
+        // Øvelse 20
+        [TestMethod()]
+        public void ParseIntegerOrNullTest()
+        {
+            string i = "dfgd";
+            string j = "20";
+
+            Assert.AreEqual(null, Calculator.ParseIntegerOrNull(i));
+            Assert.AreEqual(20, Calculator.ParseIntegerOrNull(j));
+        }
     }
 }

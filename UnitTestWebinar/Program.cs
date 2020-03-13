@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,10 +13,6 @@ namespace UnitTestWebinar
     {
         static void Main(string[] args)
         {
-            var result = Calculator.GetTimeZoneOffset("Central Europe Standard Time", DateTime.Now);
-
-            Console.WriteLine(result);
-            //PrintTimeZones();
 
             Console.ReadKey();
         }
