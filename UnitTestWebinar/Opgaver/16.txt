@@ -1,0 +1,36 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Checks the specified value and if it less than specified limit throws the
+	/// ArgumentOutOfRangeException exception with the specified message.
+	/// </summary>
+	/// <param name="value">A value to check.</param>
+	/// <param name="limit">A low limit of valid values.</param>
+	/// <param name="paramName">The name of the parameter that causes this exception.</param>
+	public static void ThrowIfLessThan(int value, int limit, string paramName)
+	{
+		bool isValueLessThan = value < limit;
+		if (isValueLessThan)
+		{
+			throw new ArgumentOutOfRangeException(paramName);
+		}
+	}
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// This test verifies that an exception is thrown when the supplied value is less than the limit.
+    /// </summary>
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentOutOfRangeException))]
+    public void Exceptions_ThrowIfLessThan()
+    {
+
+    }
+}

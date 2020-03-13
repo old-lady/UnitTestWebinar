@@ -1,0 +1,31 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Retrieves an individual cookie from the cookies collection.
+	/// </summary>
+	/// <param name="request">The request to check for cookie.</param>
+	/// <param name="cookieName">Name of the cookie.</param>
+	/// <returns>Value of the cookie as string if cookie exists, otherwise <c>null</c>.</returns>
+	public static string GetCookieValue(this HttpRequestMessage request, string cookieName)
+	{
+		CookieHeaderValue cookie = request.Headers.GetCookies(cookieName).FirstOrDefault();
+		return cookie != null ? cookie[cookieName].Value : null;
+	}
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// This tests verifies that valid single cookie value of <see cref="HttpRequestMessage"/> instance is parsed correctly.
+    /// </summary>
+    [TestMethod]
+    public void GetCookieValue_ValidSingleCookie_ReturnedCorrectly()
+    {
+
+    }
+}

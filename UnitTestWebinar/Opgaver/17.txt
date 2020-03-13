@@ -1,0 +1,32 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Gets the time zone offset.
+	/// </summary>
+	/// <param name="zoneName">Name of the zone.</param>
+	/// <param name="date">The date.</param>
+	/// <returns>TimeSpan from UTC.</returns>
+	public static TimeSpan GetTimeZoneOffset(string zoneName, DateTime date)
+	{
+		TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById(zoneName);
+		return tzi.GetUtcOffset(date);
+	}
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// This test verifies that dates are converted correctly from specific timezone to UTC and offset is returned.
+    /// </summary>
+    [TestMethod]
+    public void GetTimeZoneOffset_EasternTime_ReturnedCorrectly()
+    {
+	
+    }
+      
+}

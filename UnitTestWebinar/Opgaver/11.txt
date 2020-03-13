@@ -1,0 +1,43 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Truncates string and returns right part of it.
+	/// </summary>
+	/// <param name="value">The value to truncate.</param>
+	/// <param name="maxLength">The maximum length of return value.</param>
+	/// <returns>Right part of the string.</returns>
+	public static string Right(this string value, int maxLength)
+	{
+		// Check if the value is valid.
+		if (string.IsNullOrEmpty(value))
+		{
+			// Set valid empty string as string could be null.
+			value = string.Empty;
+		}
+		else if (value.Length > maxLength)
+		{
+			// Make the string no longer than the max length.
+			value = value.Substring(value.Length - maxLength, maxLength);
+		}
+
+		// Return the truncated string.
+		return value;
+	}
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// Verifies, that Right() extension method returns truncated string correctly according to input maximum length value.
+    /// </summary>
+    [TestMethod]
+    public void Right_DifferentMaxLength_TruncatedCorrectly()
+    {
+     
+    }
+}

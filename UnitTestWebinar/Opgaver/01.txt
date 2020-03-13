@@ -1,0 +1,37 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Summarize 2 provided values.
+	/// </summary>
+	/// <param name="i">The i.</param>
+	/// <param name="j">The j.</param>
+	/// <returns>Sum of input values</returns>
+	public static int Add(int i, int j)
+	{
+		return i + j;
+	}
+}
+// Test:
+
+[TestClass]
+public class Tests
+{
+	/// <summary>
+	/// Verifies, that Add() method correctly sums two integers.
+	/// </summary>
+	[TestMethod]
+	public void Add_TwoValidIntegers_SumIsReturned()
+	{
+		// Arrange
+		int i = 5;
+		int j = 6;
+
+		// Act
+		int k = Calculator.Add(i, j);
+
+		// Assert
+		Assert.AreEqual(11, k, "Sum is not calculated correctly.");
+	}
+}

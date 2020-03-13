@@ -1,0 +1,28 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Calculates averages the specified collection.
+	/// </summary>
+	/// <param name="collection">The collection.</param>
+	/// <returns>Averages value of input collection.</returns>
+	public static double Average(List<int> collection)
+	{
+		return collection.Sum() / (double)collection.Count;
+	}
+}
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// Verifies, that Average() method correctly average of input integers collection.
+    /// </summary>
+    [TestMethod]
+    public void Average_DifferentInputValues_AverageIsReturned()
+    {
+
+    }
+}

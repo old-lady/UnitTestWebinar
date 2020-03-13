@@ -1,0 +1,45 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Parses the integer or null.
+	/// </summary>
+	/// <param name="candidate">The candidate to parse.</param>
+	/// <returns>Integer if parsed, otherwise null.</returns>
+	public static int? ParseIntegerOrNull(string candidate)
+	{
+		int i;
+
+		if (int.TryParse(candidate, out i))
+		{
+			return i;
+		}
+
+		return null;
+	}
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// This tests verifies that ParseIntegerOrNull() parses integer value correctly.
+    /// </summary>
+    [TestMethod]
+    public void ParseIntegerOrNull_IntegerAsString_Parsed()
+    {
+    
+    }
+
+    /// <summary>
+    /// This tests verifies that ParseIntegerOrNull() parses invalid value and returns null.
+    /// </summary>
+    [TestMethod]
+    public void ParseIntegerOrNull_InvalidValue_NullIsReturned()
+    {
+     
+    }
+}

@@ -1,0 +1,29 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Gets the filename from fullPath.
+	/// </summary>
+	/// <param name="fullPath">The fullPath.</param>
+	/// <returns>The file name.</returns>
+	public static string GetFilenameFromPath(string fullPath)
+	{
+		return Path.GetFileName(fullPath);
+	}
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// Verifies, that GetFilenameFromPath method correctly parses file name from full path.
+    /// </summary>
+    [TestMethod]
+    public void GetFilenameFromPath_Validpath_ParsedCorrectly()
+    {
+   
+    }
+}

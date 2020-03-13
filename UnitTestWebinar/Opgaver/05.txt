@@ -1,0 +1,34 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Calculates factorials of the specified input.
+	/// </summary>
+	/// <param name="i">The input to calculate.</param>
+	/// <returns>Factorial </returns>
+	public static int Factorial(int i)
+	{
+		if (i <= 1)
+		{
+			return 1;
+		}
+
+		return i * Factorial(i - 1);
+	}
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// Verifies, that Factorial() method correctly calculates factorial of input number.
+    /// </summary>
+    [TestMethod]
+    public void Factorial_ValidNumber_FactorialIsReturned()
+    {
+     
+    }
+}

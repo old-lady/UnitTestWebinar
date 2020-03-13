@@ -1,0 +1,48 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Truncates the specified string without breaking a word in half.
+	/// If input string was truncated, the suffix will be added to end of output string.
+	/// </summary>
+	/// <param name="str">The input string to truncate.</param>
+	/// <param name="maxLength">Max length of output string, including specified suffix.</param>
+	/// <param name="suffix">The suffix, which will be added to end of the truncated string.</param>
+	/// <returns>If length of input string more then maximum allowed - returns truncated string, otherwise original string.</returns>
+	/// <example>
+	/// For string "hello big world" with maxLength = 12 returns "hello big...".
+	/// </example>
+	public static string TruncateByWordsWithEllipsis(this string str, int maxLength, string suffix = "...")
+	{
+		if (maxLength < suffix.Length)
+		{
+			// We don't want to do anything with invalid data.
+			return string.Empty;
+		}
+
+		if (str.Length > maxLength)
+		{
+			str = str.Substring(0, maxLength - suffix.Length + 1);
+			str = str.Substring(0, Math.Min(str.Length, str.LastIndexOf(" ", StringComparison.Ordinal) == -1 ? 0 : str.LastIndexOf(" ", StringComparison.Ordinal)));
+			str = str + suffix;
+		}
+
+		return str.Trim();
+	}
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// Verifies, that TruncateByWordsWithEllipsis extension method truncates input string if it length more maximum allowed.
+    /// </summary>
+    [TestMethod]
+    public void SmartTruncateWithEllipsis_InputLengthMoreMaximum_InputStringTruncated()
+    {
+   
+    }
+}

@@ -1,0 +1,40 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Divides the specified values.
+	/// </summary>
+	/// <param name="i">The divider.</param>
+	/// <param name="j">The dividend.</param>
+	/// <returns>Quotient.</returns>
+	public static int Divide(int i, int j)
+	{
+		return i / j;
+	}
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// Verifies, that Divide() method correctly divides 2 input integer values.
+    /// </summary>
+    [TestMethod]
+    public void Divide_ValidInputValues_DivideIsReturned()
+    {
+  
+    }
+
+    /// <summary>
+    /// Verifies, that Divide() method throws exception on trying to divide on 0.
+    /// </summary>
+    [TestMethod]
+    [ExpectedException(typeof(DivideByZeroException))]
+    public void Divide_InvalidInputValues_ExceptionIsThrown()
+    {
+       
+    }
+}

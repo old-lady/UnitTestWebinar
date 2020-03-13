@@ -1,0 +1,38 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Determines whether the specified value is valid human temperature.
+	/// </summary>
+	/// <param name="temp">The Temperature.</param>
+	/// <returns>True, when temperature is valid, otherwise false.</returns>
+	public static bool IsValidHumanTemperature(double temp)
+	{
+		return temp > 35.5 && temp <= 43.2;
+	}
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// Verifies, that IsValidHumanTemperature method correctly determines whether human temperature is valid.
+    /// </summary>
+    [TestMethod]
+    public void IsValidHumanTemperature_36_6byCelsius_TrueIsReturned()
+    {
+   
+    }
+
+    /// <summary>
+    /// Verifies, that IsValidHumanTemperature method correctly determines whether human temperature is valid.
+    /// </summary>
+    [TestMethod]
+    public void IsValidHumanTemperature_45_2byCelsius_FalseIsReturned()
+    {
+      
+    }
+}

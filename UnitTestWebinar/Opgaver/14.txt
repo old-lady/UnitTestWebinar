@@ -1,0 +1,35 @@
+// Logic:
+
+/// <summary>
+/// The car instance.
+/// </summary>
+public class Car
+{
+    /// <summary>
+    /// Gets the car speed.
+    /// </summary>
+    public int Speed { get; private set; }
+
+    /// <summary>
+    /// Accelerates this car speed.
+    /// </summary>
+    public void Accelerate()
+    {
+        this.Speed += 20;
+    }
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// Verifies, that Accelerate() increases car's speed.
+    /// </summary>
+    [TestMethod]
+    public void Accelerate_NewCar_SpeedIsIncreaed()
+    {
+     
+    }
+}

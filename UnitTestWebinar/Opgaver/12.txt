@@ -1,0 +1,41 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Serializes the specified object to XML string.
+	/// </summary>
+	/// <param name="objectInstance">The object instance to serialize.</param>
+	/// <param name="cleanNameSpaces">
+	/// Specifies whether to serialize classes into XMl without the Namespaces.
+	/// If yes then namespaces is not added. By default is set to <c>false</c>.
+	/// </param>
+	/// <returns>The string which contain object definition in XML format.</returns>
+	public static string SerializeToXmlString(this object objectInstance)
+	{
+		XmlSerializer serializer = new XmlSerializer(objectInstance.GetType());
+		StringBuilder sb = new StringBuilder();
+
+		using (TextWriter writer = new StringWriter(sb))
+		{
+			serializer.Serialize(writer, objectInstance);
+		}
+
+		return sb.ToString();
+	}
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// Verifies, that SerializeToXmlString() extension method correctly serialize objects.
+    /// </summary>
+    [TestMethod]
+    public void SerializeToXmlString_DateTime_SerializedCorrectly()
+    {
+     
+    }
+}

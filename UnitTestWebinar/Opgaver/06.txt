@@ -1,0 +1,29 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Determines whether the specified date is in leap year.
+	/// </summary>
+	/// <param name="date">The date to calculate.</param>
+	/// <returns>True, when date in leap year, otherwise false</returns>
+	public static bool IsLeapYear(DateTime date)
+	{
+		return DateTime.IsLeapYear(date.Year);
+	}
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// Verifies, that IsLeapYear method correctly determines whether date in leap year or not.
+    /// </summary>
+    [TestMethod]
+    public void IsLeapYear_LeapYear_TrueIsReturned()
+    {
+
+    }
+}

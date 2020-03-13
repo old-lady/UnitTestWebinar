@@ -1,0 +1,36 @@
+// Logic:
+
+public static class Calculator
+{
+	/// <summary>
+	/// Returns an individual HTTP Header value.
+	/// </summary>
+	/// <param name="request">The request to check for header.</param>
+	/// <param name="headerName">Name of the header to get value for.</param>
+	/// <returns>Value of the header as string if header exists, otherwise <c>null</c>.</returns>
+	public static string GetHeaderValue(this HttpRequestMessage request, string headerName)
+	{
+		IEnumerable<string> keys;
+		if (!request.Headers.TryGetValues(headerName, out keys))
+		{
+			return null;
+		}
+
+		return keys.First();
+	}
+}
+
+// Test:
+
+[TestClass]
+public class Tests
+{
+    /// <summary>
+    /// This tests verifies that null value will be returned for case, when header can't be found or value can't be parsed.
+    /// </summary>
+    [TestMethod]
+    public void GetHeaderValue_NonExistentHeader_NullValueIsReturned()
+    {
+
+    }
+}
